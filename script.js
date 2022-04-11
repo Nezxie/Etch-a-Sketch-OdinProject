@@ -34,6 +34,8 @@ function generateBoard(size){
 
 const clearButton=document.querySelector('#clearButton');
 const themeButton=document.querySelector('#darkMode');
+const sizeButton=document.querySelector('#sizeButton');
+const colorButton=document.querySelector('#colorButton');
 
 clearButton.addEventListener('click',function(){
     let selectedTiles = [...(document.querySelectorAll(".tileMarked"))];
@@ -42,8 +44,45 @@ clearButton.addEventListener('click',function(){
     }
 });
 
+    
+
 themeButton.addEventListener('click',function(){
     const elem = document.querySelector(".wrapper");
+    const butt = document.querySelectorAll(".clearButton");
+    const bord = document.querySelector(".board");
+    bord.classList.toggle("dark-mode");
     elem.classList.toggle("dark-mode");
+    for(let i of [...butt]){
+        i.classList.toggle("dark-mode");
+    }
     
 });
+
+sizeButton.addEventListener('click',function(){
+    let size = window.prompt("Enter board size: ");
+    let oldBoard=document.querySelectorAll(".tileRow");
+    for(let i of [... oldBoard]){
+        i.remove();
+    }    
+    generateBoard(size)
+});
+
+colorButton.addEventListener('click',function(){
+    let colorPicker = document.querySelector("#colorPicker");
+    colorPicker.click();
+});
+
+const colorPicker = document.querySelector("#colorPicker");
+colorPicker.addEventListener("input", function(){
+
+    
+});
+
+
+var myRoot = document.querySelector(':root');
+function myFunction_get() {
+    var rs = getComputedStyle(myRoot);
+}
+function myFunction_set() {
+    myRoot.style.setProperty('--blue', 'lightblue');
+}

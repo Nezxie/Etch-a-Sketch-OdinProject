@@ -1,14 +1,13 @@
-::root{
-    --boardSize:64;
-    --mainColor:#FFF;
-    --sideColor:#111;
+:root{
+    --drawingColor:#CAD;
     /*var(--name);*/
 
 }
+
 body{
     margin:0;
     background-color: #000;
-    transition: 0.5s;
+    font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;     
 
 }
 
@@ -17,16 +16,13 @@ body{
     display:flex;
     flex-direction: column;
     background-color: #FFF;
+    transition: 1s;
     
-}
-
-.dark-mode{
-    background-color: #111;
 }
 
 .header{
     
-    background-color: black;
+    background-color: #000;
     color:white;
     padding:20px;
     display: flex;
@@ -36,21 +32,25 @@ body{
 
 }
 .board{
+    transition: 1s;
+    box-shadow: 0 0 2em rgb(156, 156, 156);
+    border: 2px solid var(--drawingColor);
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: center;
     justify-self: center;
-    background-color: aqua;
     width: 640px;
     height: 640px;
+    margin-bottom:1rem;
 
 }
 
 .tile{
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0);
     width: 40px;
     height: 40px;
+    transition: 0.2s;
     
     /*
     width: 640/var(--boardSize) px;
@@ -58,6 +58,54 @@ body{
     */
 }
 
+.dark-mode{
+    background-color: #111;
+    color: #111 !important;
+ 
+}
+
 .tileMarked{
-    background-color: #FF0;
+    background-color: var(--drawingColor);
+}
+
+#darkMode{
+    transition: .25s;
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    background-color: rgb(0, 0, 0);
+    border-radius: 30%;
+    background-image: url("./moon2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+    
+}
+
+.clearButton{
+    margin:1rem;
+    transition: .5s;
+    border: 3px solid rgba(0, 0, 0, 0);
+    background-color: var(--drawingColor);
+    color: #FFF;
+    font-size: 2rem;
+    font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif; 
+}
+
+
+.clearButton:hover{
+    
+    border: 3px solid var(--drawingColor);
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--drawingColor) !important;
+}
+
+#darkMode:hover{
+    background-color: rgb(44, 44, 48);
+}
+
+.ButtonBox{
+   display: flex;
+   justify-content: center; 
+   align-items: center;
 }

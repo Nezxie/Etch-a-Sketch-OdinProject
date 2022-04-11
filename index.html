@@ -11,14 +11,18 @@
     <div class="wrapper">
         <div class="header">
             <h1>Etch a Sketch</h1>
-            <button type="button" id="darkMode">Toggle Theme</button>
+            <button type="button" id="darkMode"></button>
             
         </div>
         <div class="board">
 
         </div>
-        <div class="clearButtonBox">
-            <button type="button" id="clearButton">CLEAR</button>
+        <div class="ButtonBox">
+            <button type="button" class="clearButton" id="clearButton">CLEAR</button>
+            <button type="button" class="clearButton" id="sizeButton">SIZE</button>
+            <button type="button" class="clearButton"id="colorButton">COLOR</button>
+            <input type="color" style='opacity:0' id="colorPicker">
+
         </div>
     </div>
    <script src="script.js"></script>
