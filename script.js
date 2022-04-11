@@ -1,6 +1,6 @@
 const mainBox = document.querySelector(".board");
 const board = generateBoard(16);
-
+var myRoot = document.querySelector(':root');
 
 function generateBoard(size){
     let container;
@@ -59,12 +59,19 @@ themeButton.addEventListener('click',function(){
 });
 
 sizeButton.addEventListener('click',function(){
+   
     let size = window.prompt("Enter board size: ");
-    let oldBoard=document.querySelectorAll(".tileRow");
-    for(let i of [... oldBoard]){
-        i.remove();
-    }    
-    generateBoard(size)
+    if(Number.isInteger(+size) && size > 0 && size <= 640){
+        let oldBoard=document.querySelectorAll(".tileRow");
+        for(let i of [... oldBoard]){
+            i.remove();
+        }
+        myRoot.style.setProperty('--boardSize', +size);  
+        generateBoard(size)
+    }
+    else{
+        alert("Invalid size! Size must be an integer and meet requierements: \n 0 < size < 641")
+    }
 });
 
 colorButton.addEventListener('click',function(){
@@ -72,17 +79,8 @@ colorButton.addEventListener('click',function(){
     colorPicker.click();
 });
 
+
 const colorPicker = document.querySelector("#colorPicker");
 colorPicker.addEventListener("input", function(){
-
-    
+    myRoot.style.setProperty('--drawingColor', colorPicker.value);
 });
-
-
-var myRoot = document.querySelector(':root');
-function myFunction_get() {
-    var rs = getComputedStyle(myRoot);
-}
-function myFunction_set() {
-    myRoot.style.setProperty('--blue', 'lightblue');
-}
