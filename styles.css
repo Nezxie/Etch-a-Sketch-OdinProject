@@ -1,0 +1,63 @@
+::root{
+    --boardSize:64;
+    --mainColor:#FFF;
+    --sideColor:#111;
+    /*var(--name);*/
+
+}
+body{
+    margin:0;
+    background-color: #000;
+    transition: 0.5s;
+
+}
+
+.wrapper{
+    color:black;
+    display:flex;
+    flex-direction: column;
+    background-color: #FFF;
+    
+}
+
+.dark-mode{
+    background-color: #111;
+}
+
+.header{
+    
+    background-color: black;
+    color:white;
+    padding:20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+
+}
+.board{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    background-color: aqua;
+    width: 640px;
+    height: 640px;
+
+}
+
+.tile{
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    
+    /*
+    width: 640/var(--boardSize) px;
+    height: 640/var(--boardSize) px;
+    */
+}
+
+.tileMarked{
+    background-color: #FF0;
+}
