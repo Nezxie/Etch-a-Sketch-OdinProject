@@ -1,7 +1,15 @@
 const mainBox = document.querySelector(".board");
-const board = generateBoard(16);
+let board = generateBoard(16);
 var myRoot = document.querySelector(':root');
 
+
+/*
+*   TO DO
+*   toggle mode to mousedown
+*   random color mode
+*   hue mode
+*   color memory?? (if i dont have to rebuild it xd)
+*/
 function generateBoard(size){
     let container;
     let tmp;
@@ -37,6 +45,7 @@ const themeButton=document.querySelector('#darkMode');
 const sizeButton=document.querySelector('#sizeButton');
 const colorButton=document.querySelector('#colorButton');
 
+
 clearButton.addEventListener('click',function(){
     let selectedTiles = [...(document.querySelectorAll(".tileMarked"))];
     for(let tile of selectedTiles){
@@ -67,7 +76,7 @@ sizeButton.addEventListener('click',function(){
             i.remove();
         }
         myRoot.style.setProperty('--boardSize', +size);  
-        generateBoard(size)
+        board = generateBoard(size);
     }
     else{
         alert("Invalid size! Size must be an integer and meet requierements: \n 0 < size < 641")

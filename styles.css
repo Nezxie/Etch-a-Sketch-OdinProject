@@ -44,6 +44,7 @@ body{
     width: 640px;
     height: 640px;
     margin-bottom:1rem;
+    cursor:crosshair;
 
 }
 
@@ -69,6 +70,10 @@ body{
     background-color: var(--drawingColor);
 }
 
+#colorPicker:hover,
+button:hover{
+    cursor:pointer;
+}
 #darkMode{
     transition: .25s;
     border: none;
