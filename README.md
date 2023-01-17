@@ -1,3 +1,5 @@
+Live preview: https://nezxie.github.io/Etch-a-Sketch-OdinProject/
+
 Hi!
 This is a webpage featuring a sketch pad acting like etch a sketch - when you hover over a "pixel" it will change color.
 You can clear the board witch "CLEAR" button, change color witch "COLOR" button and change size of the board with "SIZE" button.
